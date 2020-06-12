@@ -7,6 +7,7 @@
     "persistence",
     "Active Record"
   ],
+  "version": "2.0.1",
   "prefer-stable": true,
   "minimum-stability": "stable",
   "homepage": "http://www.propelorm.org/",
