@@ -24,15 +24,6 @@ Propel2 is only supported on PHP 7.1 and up.
 Read the [Propel documentation](http://propelorm.org/documentation/01-installation.html).
 
 
-## Contribute
-
-Everybody can contribute to Propel2. Just fork it, and send Pull Requests.
-You have to follow [Propel2 Coding Standards](https://github.com/propelorm/Propel2/wiki/Coding-Standards) and provides unit 
-tests as much as possible. Also [check out the roadmap](https://github.com/propelorm/Propel2/wiki) to get an overview of what we are working on!
-
-Please see our [contribution guideline](http://propelorm.org/contribute.html). Thank you!
-
-
 ## License
 
 See the `LICENSE` file.
