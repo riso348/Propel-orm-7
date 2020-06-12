@@ -38,8 +38,9 @@ class SqlInsertCommand extends AbstractCommand
 
     /**
      * {@inheritdoc}
+     * @return int
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output):int
     {
         $manager = new SqlManager();
 
@@ -70,5 +71,6 @@ class SqlInsertCommand extends AbstractCommand
         $manager->setWorkingDirectory($generatorConfig->getSection('paths')['sqlDir']);
 
         $manager->insertSql();
+        return 1;
     }
 }

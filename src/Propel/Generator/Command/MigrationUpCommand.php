@@ -43,8 +43,9 @@ class MigrationUpCommand extends AbstractCommand
 
     /**
      * {@inheritdoc}
+     * @return int
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output):int
     {
         $configOptions = [];
 
@@ -82,7 +83,7 @@ class MigrationUpCommand extends AbstractCommand
         if (!$nextMigrationTimestamp) {
             $output->writeln('All migrations were already executed - nothing to migrate.');
 
-            return false;
+            return 0;
         }
 
         if ($input->getOption('fake')) {
@@ -109,7 +110,7 @@ class MigrationUpCommand extends AbstractCommand
                     $output->writeln('<error>preUp() returned false. Continue migration.</error>');
                 } else {
                     $output->writeln('<error>preUp() returned false. Aborting migration.</error>');
-                    return false;
+                    return 0;
                 }
             }
         }
@@ -190,5 +191,6 @@ class MigrationUpCommand extends AbstractCommand
         } else {
             $output->writeln('Migration complete. No further migration to execute.');
         }
+        return 1;
     }
 }

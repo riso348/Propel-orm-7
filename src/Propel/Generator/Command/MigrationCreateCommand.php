@@ -45,8 +45,9 @@ class MigrationCreateCommand extends AbstractCommand
 
     /**
      * {@inheritdoc}
+     * @return int
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output):int
     {
         $configOptions = [];
 
@@ -96,6 +97,7 @@ class MigrationCreateCommand extends AbstractCommand
             $output->writeln('Now add SQL statements and data migration code as necessary.');
             $output->writeln('Once the migration class is valid, call the "migrate" task to execute it.');
         }
+        return 1;
     }
 
 }
