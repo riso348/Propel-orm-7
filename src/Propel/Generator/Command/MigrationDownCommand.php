@@ -43,8 +43,9 @@ class MigrationDownCommand extends AbstractCommand
 
     /**
      * {@inheritdoc}
+     * @return int
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output):int
     {
         $configOptions = [];
 
@@ -83,7 +84,7 @@ class MigrationDownCommand extends AbstractCommand
         if (!$nextMigrationTimestamp) {
             $output->writeln('No migration were ever executed on this database - nothing to reverse.');
 
-            return false;
+            return 0;
         }
 
         $output->writeln(sprintf(
@@ -181,5 +182,6 @@ class MigrationDownCommand extends AbstractCommand
         } else {
             $output->writeln('Reverse migration complete. No more migration available for reverse');
         }
+        return 1;
     }
 }

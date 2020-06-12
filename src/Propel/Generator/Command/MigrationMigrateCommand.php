@@ -43,8 +43,9 @@ class MigrationMigrateCommand extends AbstractCommand
 
     /**
      * {@inheritdoc}
+     * @return int
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output):int
     {
         $configOptions = [];
 
@@ -81,7 +82,7 @@ class MigrationMigrateCommand extends AbstractCommand
         if (!$manager->getFirstUpMigrationTimestamp()) {
             $output->writeln('All migrations were already executed - nothing to migrate.');
 
-            return false;
+            return 0;
         }
 
         $timestamps = $manager->getValidMigrationTimestamps();
@@ -186,5 +187,6 @@ class MigrationMigrateCommand extends AbstractCommand
         }
 
         $output->writeln('Migration complete. No further migration to execute.');
+        return 1;
     }
 }
