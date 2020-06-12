@@ -8,7 +8,7 @@
         "persistence",
         "Active Record"
     ],
-    "minimum-stability": "dev",
+    "prefer-stable": true,
     "homepage": "http://www.propelorm.org/",
     "license": "MIT",
     "authors": [
