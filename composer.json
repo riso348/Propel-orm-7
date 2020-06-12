@@ -1,6 +1,7 @@
 {
     "name": "tyrion/propel-orm-7",
     "type": "library",
+    "version": "2.0.1",
     "description": "ORM framework based on Propel2 with minimum requirements php7.1+",
     "keywords": [
         "ORM",
@@ -21,17 +22,17 @@
     ],
     "require": {
         "php": ">=7.1",
-        "symfony/yaml": "~2.3||~3.0||~4.0",
-        "symfony/console": "~2.3||~3.0||~4.0",
-        "symfony/finder": "~2.3||~3.0||~4.0",
-        "symfony/validator": "~2.3||~3.0.0||~3.1.0||^3.2.4||~4.0",
-        "symfony/filesystem": "~2.3||~3.0||~4.0",
-        "symfony/config": "~2.3||~3.0||~4.0",
+        "symfony/yaml": "~5.0",
+        "symfony/console": "~5.0",
+        "symfony/finder": "~5.0",
+        "symfony/validator": "~5.0",
+        "symfony/filesystem": "~5.0",
+        "symfony/config": "~5.0",
         "psr/log": "~1.0"
     },
     "require-dev": {
         "monolog/monolog": "~1.3",
-        "phpunit/phpunit": "~4.0||~5.0"
+        "phpunit/phpunit": "~9.0"
     },
     "suggest": {
         "monolog/monolog": "The recommended logging library to use with Propel."
