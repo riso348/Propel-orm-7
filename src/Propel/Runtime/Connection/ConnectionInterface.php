@@ -80,7 +80,7 @@ interface ConnectionInterface
      * @return mixed A successful call returns the value of the requested attribute.
      *               An unsuccessful call returns null.
      */
-    public function getAttribute($attribute);
+    public function getAttribute(int $attribute);
 
     /**
      * Set an attribute.
@@ -90,7 +90,7 @@ interface ConnectionInterface
      *
      * @return boolean TRUE on success or FALSE on failure.
      */
-    public function setAttribute($attribute, $value);
+    public function setAttribute(int $attribute, $value);
 
     /**
      * Returns the ID of the last inserted row or sequence value.
@@ -181,7 +181,7 @@ interface ConnectionInterface
      * @return \Propel\Runtime\DataFetcher\DataFetcherInterface
      * @throws \Propel\Runtime\Connection\Exception\ConnectionException depending on error handling.
      */
-    public function query($statement);
+    public function query(string $statement, ?int $fetchMode = null, mixed ...$fetchModeArgs);
 
     /**
      * Quotes a string for use in a query.

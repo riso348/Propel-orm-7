@@ -193,11 +193,11 @@ class Join
     /**
      * @param string $leftTableName
      * @param string $leftColumnName
-     * @param mixed  $leftTableAlias
-     * @param mixed  $leftColumnValue
+     * @param mixed $leftColumnValue
+     * @param mixed $leftTableAlias
      * @param string $operator
      */
-    public function addLocalValueCondition($leftTableName, $leftColumnName, $leftTableAlias = null, $leftColumnValue, $operator = self::EQUAL)
+    public function addLocalValueCondition(string $leftTableName, string $leftColumnName, $leftColumnValue, $leftTableAlias = null, $operator = self::EQUAL)
     {
         $this->leftTableName = $leftTableName;
         $this->leftTableAlias  = $leftTableAlias;
@@ -209,7 +209,7 @@ class Join
         $this->count++;
     }
 
-    public function addForeignValueCondition($rightTableName, $rightColumnName, $rightTableAlias = null, $rightColumnValue, $operator = self::EQUAL)
+    public function addForeignValueCondition(string $rightTableName, string $rightColumnName, $rightColumnValue, $rightTableAlias = null, $operator = self::EQUAL)
     {
         $this->rightTableName = $rightTableName;
         $this->rightTableAlias = $rightTableAlias;
@@ -666,7 +666,7 @@ class Join
                     $conditions[] = $this->getLeftColumn($i) . $this->getOperator($i) . $this->getRightColumn($i);
                 }
             }
-            $joinCondition = sprintf('(%s)', implode($conditions, ' AND '));
+            $joinCondition = sprintf('(%s)', implode(' AND ', $conditions));
         } else {
             $joinCondition = '';
             $this->getJoinCondition()->appendPsTo($joinCondition, $params);
