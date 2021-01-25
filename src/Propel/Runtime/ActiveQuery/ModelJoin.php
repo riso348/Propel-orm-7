@@ -41,8 +41,8 @@ class ModelJoin extends Join
                     $this->addForeignValueCondition(
                         $rightCols[$i]->getTableName(),
                         $rightCols[$i]->getName(),
-                        $relationAlias,
                         $leftValues[$i],
+                        $relationAlias,
                         Criteria::EQUAL
                     );
                 } else {
@@ -50,8 +50,8 @@ class ModelJoin extends Join
                     $this->addLocalValueCondition(
                         $leftCols[$i]->getTableName(),
                         $leftCols[$i]->getName(),
-                        $leftTableAlias,
                         $leftValues[$i],
+                        $leftTableAlias,
                         Criteria::EQUAL
                     );
                 }

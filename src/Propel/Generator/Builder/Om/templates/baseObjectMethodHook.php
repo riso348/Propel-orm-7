@@ -1,14 +1,14 @@
 
 <?php if ($preSave):?>
     /**
-     * Code to be run before persisting the object
-     * @param  ConnectionInterface $con
-     * @return boolean
-     */
+    * Code to be run before persisting the object
+    * @param  ConnectionInterface $con
+    * @return boolean
+    */
     public function preSave(ConnectionInterface $con = null)
     {
         if (is_callable('parent::preSave')) {
-	        return parent::preSave($con);
+            // return parent::preSave($con); // php 8.0 class scoper has no parent
         }
         return true;
     }
@@ -16,27 +16,27 @@
 <?php endif?>
 <?php if ($postSave):?>
     /**
-     * Code to be run after persisting the object
-     * @param ConnectionInterface $con
-     */
+    * Code to be run after persisting the object
+    * @param ConnectionInterface $con
+    */
     public function postSave(ConnectionInterface $con = null)
     {
         if (is_callable('parent::postSave')) {
-	        parent::postSave($con);
+            // parent::postSave($con); // php 8.0 class scoper has no parent
         }
     }
 
 <?php endif?>
 <?php if ($preInsert):?>
     /**
-     * Code to be run before inserting to database
-     * @param  ConnectionInterface $con
-     * @return boolean
-     */
+    * Code to be run before inserting to database
+    * @param  ConnectionInterface $con
+    * @return boolean
+    */
     public function preInsert(ConnectionInterface $con = null)
     {
         if (is_callable('parent::preInsert')) {
-	        return parent::preInsert($con);
+            // return parent::preInsert($con); // php 8.0 class scoper has no parent
         }
         return true;
     }
@@ -44,27 +44,27 @@
 <?php endif?>
 <?php if ($postInsert):?>
     /**
-     * Code to be run after inserting to database
-     * @param ConnectionInterface $con
-     */
+    * Code to be run after inserting to database
+    * @param ConnectionInterface $con
+    */
     public function postInsert(ConnectionInterface $con = null)
     {
         if (is_callable('parent::postInsert')) {
-	        parent::postInsert($con);
+            // parent::postInsert($con); // php 8.0 class scoper has no parent
         }
     }
 
 <?php endif?>
 <?php if ($preUpdate):?>
     /**
-     * Code to be run before updating the object in database
-     * @param  ConnectionInterface $con
-     * @return boolean
-     */
+    * Code to be run before updating the object in database
+    * @param  ConnectionInterface $con
+    * @return boolean
+    */
     public function preUpdate(ConnectionInterface $con = null)
     {
         if (is_callable('parent::preUpdate')) {
-	        return parent::preUpdate($con);
+            // return parent::preUpdate($con); // php 8.0 class scoper has no parent
         }
         return true;
     }
@@ -72,27 +72,27 @@
 <?php endif?>
 <?php if ($postUpdate):?>
     /**
-     * Code to be run after updating the object in database
-     * @param ConnectionInterface $con
-     */
+    * Code to be run after updating the object in database
+    * @param ConnectionInterface $con
+    */
     public function postUpdate(ConnectionInterface $con = null)
     {
         if (is_callable('parent::postUpdate')) {
-	        parent::postUpdate($con);
+            // parent::postUpdate($con); // php 8.0 class scoper has no parent
         }
     }
 
 <?php endif?>
 <?php if ($preDelete):?>
     /**
-     * Code to be run before deleting the object in database
-     * @param  ConnectionInterface $con
-     * @return boolean
-     */
+    * Code to be run before deleting the object in database
+    * @param  ConnectionInterface $con
+    * @return boolean
+    */
     public function preDelete(ConnectionInterface $con = null)
     {
         if (is_callable('parent::preDelete')) {
-	        return parent::preDelete($con);
+            // return parent::preDelete($con); // php 8.0 class scoper has no parent
         }
         return true;
     }
@@ -100,13 +100,13 @@
 <?php endif?>
 <?php if ($postDelete):?>
     /**
-     * Code to be run after deleting the object in database
-     * @param ConnectionInterface $con
-     */
+    * Code to be run after deleting the object in database
+    * @param ConnectionInterface $con
+    */
     public function postDelete(ConnectionInterface $con = null)
     {
         if (is_callable('parent::postDelete')) {
-	        parent::postDelete($con);
+            // parent::postDelete($con); // php 8.0 class scoper has no parent
         }
     }
 
