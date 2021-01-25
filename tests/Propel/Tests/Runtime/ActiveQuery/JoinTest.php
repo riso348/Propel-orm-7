@@ -122,7 +122,7 @@ class JoinTest extends BaseTestCase
         $j = new Join();
         $j->setJoinType(Criteria::LEFT_JOIN);
         $j->addExplicitCondition('log', 'AUTHOR_ID', null, 'author', 'ID', 'a', Join::EQUAL);
-        $j->addLocalValueCondition('log', 'target_type', 'author', null, Join::EQUAL);
+        $j->addLocalValueCondition('log', 'target_type', null, 'author', Join::EQUAL);
         $params = [];
         $this->assertEquals('LEFT JOIN author a ON (log.AUTHOR_ID=a.ID AND log.target_type=\'author\')', $j->getClause($params));
     }

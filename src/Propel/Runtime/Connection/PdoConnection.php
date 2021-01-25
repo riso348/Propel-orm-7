@@ -72,7 +72,7 @@ class PdoConnection extends \PDO implements ConnectionInterface
      * @return bool
      * @throws InvalidArgumentException
      */
-    public function setAttribute(int $attribute, $value)
+    public function setAttribute($attribute, $value)
     {
         if (is_string($attribute) && false === strpos($attribute, '::')) {
             $attribute = '\PDO::' . $attribute;
@@ -104,7 +104,7 @@ class PdoConnection extends \PDO implements ConnectionInterface
     /**
      * {@inheritDoc}
      */
-    public function query (string $statement, ?int $fetchMode = null, mixed ...$fetchModeArgs)
+    public function query($statement)
     {
         return parent::query($statement);
     }

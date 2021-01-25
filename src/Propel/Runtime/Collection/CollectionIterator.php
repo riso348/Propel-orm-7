@@ -208,13 +208,13 @@ class CollectionIterator extends \ArrayIterator
         $this->refreshPositions();
     }
 
-    public function asort(int $flags = SORT_REGULAR)
+    public function asort()
     {
-        parent::asort($flags);
+        parent::asort();
         $this->refreshPositions();
     }
 
-    public function ksort(int $flags = SORT_REGULAR)
+    public function ksort()
     {
         parent::ksort();
         $this->refreshPositions();

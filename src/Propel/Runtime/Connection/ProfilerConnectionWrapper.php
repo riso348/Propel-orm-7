@@ -56,7 +56,13 @@ class ProfilerConnectionWrapper extends ConnectionWrapper
         return $this->profiler;
     }
 
-    public function setStringAttribute(string $attribute, $value)
+    /**
+     * Overrides the parent setAttribute to support the isSlowOnly attribute.
+     *
+     * @param string $attribute The attribute name, or the constant name containing the attribute name (e.g. 'PDO::ATTR_CASE')
+     * @param mixed  $value
+     */
+    public function setAttribute($attribute, $value)
     {
         switch ($attribute) {
             case 'isSlowOnly':
@@ -65,19 +71,8 @@ class ProfilerConnectionWrapper extends ConnectionWrapper
                 $this->isSlowOnly = $value;
                 break;
             default:
-                return;
+                parent::setAttribute($attribute, $value);
         }
-    }
-
-    /**
-     * Overrides the parent setAttribute to support the isSlowOnly attribute.
-     *
-     * @param string $attribute The attribute name, or the constant name containing the attribute name (e.g. 'PDO::ATTR_CASE')
-     * @param mixed $value
-     */
-    public function setAttribute(int $attribute, $value)
-    {
-        parent::setAttribute($attribute, $value);
     }
 
     /**
@@ -103,7 +98,7 @@ class ProfilerConnectionWrapper extends ConnectionWrapper
     /**
      * {@inheritDoc}
      */
-    public function query(string $statement = '', ?int $fetchMode = null, mixed ...$fetchModeArgs)
+    public function query($statement = '')
     {
         $this->getProfiler()->start();
         $args = func_get_args();

@@ -315,7 +315,7 @@ class ConnectionWrapper implements ConnectionInterface, LoggerAwareInterface
      * @return mixed A successful call returns the value of the requested attribute.
      *               An unsuccessful call returns null.
      */
-    public function getAttribute(int $attribute)
+    public function getAttribute($attribute)
     {
         switch ($attribute) {
             case self::PROPEL_ATTR_CACHE_PREPARES:
@@ -332,7 +332,7 @@ class ConnectionWrapper implements ConnectionInterface, LoggerAwareInterface
      * @param string $attribute The attribute name, or the constant name containing the attribute name (e.g. 'PDO::ATTR_CASE')
      * @param mixed  $value
      */
-    public function setAttribute(int $attribute, $value)
+    public function setAttribute($attribute, $value)
     {
         if (is_string($attribute)) {
             if (false === strpos($attribute, '::')) {
@@ -426,7 +426,7 @@ class ConnectionWrapper implements ConnectionInterface, LoggerAwareInterface
      *
      * @return \PDOStatement
      */
-    public function query(string $statement, ?int $fetchMode = null, mixed ...$fetchModeArgs)
+    public function query($statement)
     {
         $args = func_get_args();
         $sql = array_shift($args);

@@ -245,7 +245,7 @@ class StatementWrapper extends \PDOStatement implements \IteratorAggregate
      *
      * @return array
      */
-    public function fetchAll(int $fetchStyle = \PDO::FETCH_BOTH, mixed ...$args)
+    public function fetchAll($fetchStyle = \PDO::FETCH_BOTH, $fetchArgument = null, $ctorArgs = [])
     {
         return $this->statement->fetchAll($fetchStyle);
     }
@@ -285,9 +285,9 @@ class StatementWrapper extends \PDOStatement implements \IteratorAggregate
     /**
      * Return the internal statement, which is traversable
      *
-     * @return \Traversable | \Iterator
+     * @return \Traversable
      */
-    public function getIterator():\Iterator
+    public function getIterator()
     {
         return $this->statement;
     }
